@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, Injectable } from '@angular/core';
-import { Patient } from '../classes/Patient';
+import { Patient } from '../../classes/Patient';
 
 @Component({
   selector: 'app-patient-list',
