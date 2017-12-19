@@ -1,4 +1,4 @@
-export class Patients{
+export class Patient{
     firstName: string;
     lastName: string;
     dob: Date;
@@ -13,7 +13,4 @@ export class Patients{
         this.gender = gender;
     }
 
-    showPatientDemographics(patient: Patients): any{
-
-    }
 }

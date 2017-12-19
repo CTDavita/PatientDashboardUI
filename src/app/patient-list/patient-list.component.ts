@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, Injectable } from '@angular/core';
-import { Patients } from '../Patients';
+import { Patient } from '../classes/Patient';
 
 @Component({
   selector: 'app-patient-list',
@@ -8,7 +8,7 @@ import { Patients } from '../Patients';
 })
 export class PatientListComponent implements OnInit {
 
-  @Input('patientObj') patient: Patients;
+  @Input('patientObj') patient: Patient;
 
   constructor() { }
 
