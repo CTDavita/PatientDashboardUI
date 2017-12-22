@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
+import { Allergy } from '../classes/Allergy';
+import { Medication } from '../classes/Medication';
 
 
 @Injectable()
@@ -24,5 +26,21 @@ export class PatientService {
         .catch((error:any) => Observable.throw(error.json().error || 'Server Error'));
  
   }
+
+  getPatientAllergies() : Observable<Allergy[]> {
+   
+    return this.http.get(this.baseUrl+'/patients/:patientId/allergies')
+        .map((res:Response) => res.json())
+          .catch((error:any) => Observable.throw(error.json().error || 'Server Error'));
+   
+    }
+
+    getPatientMedications() : Observable<Medication[]> {
+   
+      return this.http.get(this.baseUrl+'/patients/:patientId/medications')
+          .map((res:Response) => res.json())
+            .catch((error:any) => Observable.throw(error.json().error || 'Server Error'));
+     
+      }
 
 }
