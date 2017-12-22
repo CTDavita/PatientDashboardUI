@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PatientListComponent } from './patients/patient-list/patient-list.component';
 import { PatientsComponent } from './patients/patients.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -13,7 +14,8 @@ import { PatientsComponent } from './patients/patients.component';
   declarations: [
     AppComponent,
     PatientListComponent,
-    PatientsComponent
+    PatientsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
