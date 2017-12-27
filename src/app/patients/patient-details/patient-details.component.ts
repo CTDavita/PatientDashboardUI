@@ -14,10 +14,16 @@ import { Patient} from '../../classes/Patient';
 
 export class PatientDetailsComponent implements OnInit {
 
-  medications: Medication[];
-  allergies: Allergy[];
+  medications: Medication[] = [];
+  allergies: Allergy[] = [];
+  pat: Patient;
 
   ngOnInit() {
+    this.pat = new Patient("Natraj","Rohit",new Date("02/04/1978"),3453453,"Male")
+    this.allergies.push(new Allergy("ABC",new Date("02/02/1202"),"ABCDE"))
+    this.allergies.push(new Allergy("DEF",new Date("02/02/1202"),"DEFGH"))
+    this.medications.push(new Medication("ABC",new Date("02/02/1202"),"ABCDE"))
+    this.medications.push(new Medication("DEF",new Date("02/02/1202"),"DEFGH"))
   }
   
   constructor(private patientService: PatientService) { }
@@ -33,7 +39,6 @@ export class PatientDetailsComponent implements OnInit {
           console.log('Something went wrong');
         }
       );
-
   }
 
   getPatientAllergies(): void {

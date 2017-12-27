@@ -1,1 +1,49 @@
-<p> This is working</p>
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          Demographics</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <p>Patient Last Name: </p>{{pat.lastName}}
+            <p>Patient First Name: </p>{{pat.firstName}}
+            <p>Patient DOB: </p>{{pat.dob}}
+            <p>Patient SSN: </p>{{pat.ssn}}
+            <p>Patient Gender: </p>{{pat.gender}}
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+          Allergies</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body" *ngFor = "let allergyElement of allergies">
+            <p>Allergy Name: </p>{{allergyElement.name}}
+            <p>Allergy Date: </p>{{allergyElement.date}}
+            <p>Allergy Description: </p>{{allergyElement.description}}
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          Medications</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body" *ngFor = "let medicationElement of medications">
+                <p>Medication Name: </p>{{medicationElement.name}}
+                <p>Medication Date: </p>{{medicationElement.date}}
+                <p>Medication Description: </p>{{medicationElement.description}}
+        </div>
+      </div>
+    </div>
+  </div>
